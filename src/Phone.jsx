@@ -2,11 +2,25 @@ import React from "react"
 import statusbar from "./assets/statusbar.svg"
 import Droppable from "./Droppable"
 import { DraggableList, DroppableList } from "./ElementsList"
+import { useSettings } from "./lib/store"
 
 const Phone = ({ droppableChildren, draggableActive }) => {
+  const showStatusBar = useSettings((state) => state.showStatusBar)
+  const backgroundColor = useSettings((state) => state.backgroundColor)
+
   return (
-    <div className="bg-neutral-200 flex flex-col w-[375px] h-[812px] rounded-[20px] border-black border-[5px] over">
-      <img src={statusbar} className="select-none" draggable="false" alt="" />
+    <div
+      className="flex flex-col w-[375px] h-[812px] rounded-[20px] border-black border-[5px] dark:border-neutral-600"
+      style={{ backgroundColor: backgroundColor }}
+    >
+      {showStatusBar && (
+        <img
+          src={statusbar}
+          className="select-none dark:invert"
+          draggable="false"
+          alt=""
+        />
+      )}
       <div className="w-full h-full max-h-full grid grid-cols-12 grid-rows-[repeat(40,minmax(0,1fr))] gap-1 py-1 px-2 grow">
         {DroppableList.map((dropValues, index) => (
           <Droppable

@@ -14,40 +14,68 @@ import cartImg from "./assets/cart.svg"
 import NavButton from "./NavButton"
 
 export const DraggableList = {
-  greetings_label: <p className="text-lg pb-1">Добрый день!</p>,
-  sun: <img src={sunImg} />,
+  greetings_label: (
+    <p className="text-lg pb-1 dark:text-neutral-100">Добрый день!</p>
+  ),
+  sun: <img src={sunImg} className="dark:invert" />,
   magGlass: (
     <button className="">
-      <img src={magGlass} />
+      <img src={magGlass} className="dark:invert" />
     </button>
   ),
   delivery_address: (
-    <p className="w-full">
-      <span className="text-neutral-600 pl-2">Доставим в</span> г. Челябинск,
-      ул. Ворошилова, 12
+    <p className="w-full dark:text-neutral-100">
+      <span className="text-neutral-600 pl-2 dark:text-neutral-400">
+        Доставим в
+      </span>{" "}
+      г. Челябинск, ул. Ворошилова, 12
     </p>
   ),
   special: (
-    <p className=" text-xl font-montserrat font-medium pl-2">
+    <p className=" text-xl font-montserrat font-medium pl-2 dark:text-neutral-100">
       Спецпредложения для вас
     </p>
   ),
-  menu: <p className=" text-xl font-montserrat font-medium">Меню</p>,
+  menu: (
+    <p className=" text-xl font-montserrat font-medium dark:text-neutral-100">
+      Меню
+    </p>
+  ),
   sale: <img src={saleImg} />,
   menu_sets: <MenuButton img={setsImg} text="Сеты" />,
   menu_sushi: <MenuButton img={sushiImg} text="Суши" />,
   menu_soup: <MenuButton img={soupImg} text="Супы" />,
   sushi1: <img src={sushiImg1} />,
-  set1: <p className=" text-xl font-montserrat font-medium">Сет №1</p>,
-  set1cal: <p className="font-montserrat">15 шт. / 395 г. / 183.5 ккал.</p>,
+  set1: (
+    <p className=" text-xl font-montserrat font-medium dark:text-neutral-100">
+      Сет №1
+    </p>
+  ),
+  set1cal: (
+    <p className="font-montserrat dark:text-neutral-100">
+      15 шт. / 395 г. / 183.5 ккал.
+    </p>
+  ),
   price1: (
-    <button className="px-2 py-1 bg-amber-400 rounded-lg">899 &#8381;</button>
+    <button className="px-2 py-1 bg-amber-400 rounded-lg hover:text-white active:bg-amber-500 transition-colors">
+      899 &#8381;
+    </button>
   ),
   sushi2: <img src={sushiImg2} />,
-  set2: <p className=" text-xl font-montserrat font-medium">Сет №2</p>,
-  set2cal: <p className="font-montserrat">15 шт. / 443 г. / 163.1 ккал.</p>,
+  set2: (
+    <p className=" text-xl font-montserrat font-medium dark:text-neutral-100">
+      Сет №2
+    </p>
+  ),
+  set2cal: (
+    <p className="font-montserrat dark:text-neutral-100">
+      15 шт. / 443 г. / 163.1 ккал.
+    </p>
+  ),
   price2: (
-    <button className="px-2 py-1 bg-amber-400 rounded-lg">999 &#8381;</button>
+    <button className="px-2 py-1 bg-amber-400 rounded-lg hover:text-white active:bg-amber-500 transition-colors">
+      999 &#8381;
+    </button>
   ),
   menuBtn: <NavButton img={menuImg}>Меню</NavButton>,
   profileBtn: <NavButton img={profileImg}>Профиль</NavButton>,

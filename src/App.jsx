@@ -4,6 +4,7 @@ import Elements from "./Elements"
 import { useState } from "react"
 import { DroppableList } from "./ElementsList"
 import PhoneOverlay from "./PhoneOverlay"
+import ElementsAndSettings from "./ElementsAndSettings"
 
 const App = () => {
   const [droppableChildren, setDroppableChildren] = useState(
@@ -34,13 +35,13 @@ const App = () => {
       onDragEnd={handleDragEnd}
       onDragStart={(event) => setDraggableActive(event.active.id)}
     >
-      <div className="flex flex-col gap-8 items-center justify-center w-full h-[100vh]">
+      <div className="flex flex-col gap-8 items-center justify-center w-full h-[100vh] dark:bg-neutral-900">
         <div className="flex gap-4">
           <Phone
             droppableChildren={droppableChildren}
             draggableActive={draggableActive}
           />
-          <Elements droppableChildren={droppableChildren} />
+          <ElementsAndSettings droppableChildren={droppableChildren} />
         </div>
         <div className="w-full flex justify-center">
           <button

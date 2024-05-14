@@ -13,13 +13,14 @@ const Draggable = (props) => {
 
   return (
     <div
-      className="h-max w-max cursor-move"
+      className="h-max w-max cursor-move relative"
       ref={setNodeRef}
       style={style}
       {...listeners}
       {...attributes}
     >
       {props.children}
+      <div className="absolute w-full h-full top-0 left-0" />
     </div>
   )
 }
